@@ -1,28 +1,13 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+"Today" allows users to post and view tagged updates on what they've been doing.
+Guest users can view all posts, look at the members and filter their posts, and
+search all posts by tag.  Signing up allows users to pot updates from their
+home page, which in a later version will provide a list of To-do items to
+further organize posts.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+An index on the dB tables prevents user-title-date duplication of posts, while
+Rails validation restricts presence/length of titles, tags, and usernames, and
+enforces that users can post at most one update per day. Very simple javascript
+allows users to enter tags from a drop-down list, and Bootstrap provides a
+(somewhat) cohesive look.
