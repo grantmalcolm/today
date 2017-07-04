@@ -1,0 +1,25 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+today-user-name {
+  text-weight: bold;
+  float: left;
+}
+
+today-joined-at {
+  margin-left: 20px;
+}
+
+today-num-posts {
+  float: right;
+}
+
+post-date {
+  margin-top: 10px;
+}
+

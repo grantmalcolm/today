@@ -1,0 +1,35 @@
+<% if @posts && @posts.any? %>
+  <% the_date = Date.current %>
+  <% if @posts.first.thedate == the_date %>
+    <div class="post-date">
+      Today
+    </div>
+  <% else %>
+    <% the_date = @posts.first.thedate %>
+    <div class="post-date">
+      <%= the_date %>
+    </div>
+  <% end %>
+  <% @posts.each do |post| %>
+    <% if post.thedate != the_date %>
+       <% the_date = post.thedate %>
+       <div class="post-date">
+         <%= the_date %>
+       </div>          
+    <% end %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= post.user.username %> has:
+        <%= post.title %>
+      </div>
+      <div class="panel-body">
+        <%= post.body %>
+      </div>
+      <div class="panel-footer">
+        Tags: <%= render_tags_as_links(post.taglist) %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  No Posts yet.
+<% end %>

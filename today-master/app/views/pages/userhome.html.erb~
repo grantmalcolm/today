@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'layouts/today_logo' %>
+  </div>
+  <div class="col-md-6">
+    <% if user_signed_in? && current_user.username == @username %>
+      <h3>My Posts</h3>
+    <% else %>
+      <h3><%= @username %>&rsquo;s Posts</h3>
+    <% end %>
+    <%= render 'posts_list' %>
+  </div>
+  <div class="col-md-3">
+    <h3>Tags</h3>
+    <h4>What we&rsquo;re about</h4>
+  </div>
+</div>

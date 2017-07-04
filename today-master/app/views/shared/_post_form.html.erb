@@ -1,0 +1,22 @@
+<%= form_for(@post) do |form| %>
+  <span id="notice"><%= notice %></span>
+  <div class="field">
+    <%= form.text_field :title, id: :post_title, placeholder: "Today I have..." %>
+  </div>
+  <div class="field">
+    <%= form.text_area :body, id: :post_body, placeholder: "Give some more details here" %>
+  </div>
+  <div class="field">
+    Add your own tags or choose from: 
+    <select onchange="swap(this.value, 'post_taglist')">
+      <option disabled selected value> -- choose tags-- </option>
+      <% @tags.each do |tag| %>
+        <option value="<%= tag.name %>"><%= tag.name %></option>
+      <% end %>
+    </select>
+    <%= form.text_field :taglist, id: :post_taglist %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

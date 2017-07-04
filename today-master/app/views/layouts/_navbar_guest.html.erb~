@@ -1,0 +1,15 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Today</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/members">Members</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to('Sign in', new_user_session_path) %></li>
+      <li><%= link_to('Sign up', new_user_registration_path) %></li>
+    </ul>
+  </div>
+</nav>
+
